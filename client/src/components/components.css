@@ -1,0 +1,13 @@
+.add_user_form,
+.login_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.add_user_form *,
+.login_form * {
+  margin: 2px 0 2px 10px;
+}
