@@ -50,8 +50,7 @@ class UserRepository {
   ) {
     // Execute the SQL SELECT query to retrieve all items from the "item" table
     const [rows] = await databaseClient.query<Rows>(
-      "select * from user where email= ? and password = ?",
-      [user.email, user.password],
+      `select * from user where email= '${user.email}' and password = '${user.password}`,
     );
 
     // Return the array of items
