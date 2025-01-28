@@ -71,10 +71,10 @@ const login: RequestHandler = async (req, res, next) => {
     // Create the user
     const identifiedUser = await userRepository.readWithEmailAndPassword(user);
 
-    if (user == null) {
+    if (identifiedUser === undefined) {
       res.sendStatus(404);
     } else {
-      res.json(identifiedUser).status(200);
+      res.status(200).json(identifiedUser);
     }
   } catch (err) {
     // Pass any errors to the error-handling middleware

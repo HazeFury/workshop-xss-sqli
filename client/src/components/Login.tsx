@@ -30,20 +30,23 @@ const Login = ({ connectedUser, setConnectedUser }: LoginProps) => {
           toast.success("Bienvenue");
         } else {
           toast.error("Un problème est survenu, veuillez réessayer");
+          return;
         }
         return res.json();
       })
       .then((data) => {
-        console.info(data);
         setConnectedUser(data);
       });
   };
   return (
     <>
       {connectedUser === null ? (
-        <p>Pas connecté</p>
+        <p>Pas connecté actuellement</p>
       ) : (
-        <p>{`connecté en tant que : ${connectedUser?.firstname}`}</p>
+        <p>
+          connecté en tant que :{" "}
+          <span className="bold">{connectedUser?.firstname}</span>
+        </p>
       )}
       <form className="login_form" onSubmit={handleLogin}>
         <label htmlFor="email">
