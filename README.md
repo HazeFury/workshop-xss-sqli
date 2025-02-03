@@ -69,7 +69,7 @@ Pourquoi ?
 ### 3️⃣ SQL Injection avancée - Suppression de la base de données
 
 Entre cette valeur dans le champ mot de passe lors de la connexion :\
- `Info : Remplacer testdb par le nom de database que vous avez mis dans votre fichier .env`
+`Info : Remplacer testdb par le nom de database que tu as mis dans ton fichier .env`
 ```sql
 '; DROP DATABASE testdb; -- 
 ```
