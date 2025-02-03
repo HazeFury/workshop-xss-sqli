@@ -26,25 +26,6 @@ function App() {
 
   useEffect(fetchUsers, []);
 
-  // -------------- STEP 2  -------------------------
-  const executeScript = (element: HTMLElement) => {
-    const scripts = element.getElementsByTagName("script");
-    for (const script of scripts) {
-      const newScript = document.createElement("script");
-      newScript.text = script.innerHTML; // Récupère le contenu du script injecté
-      document.body.appendChild(newScript); // Ajoute le script au DOM
-    }
-  };
-
-  useEffect(() => {
-    const table = document.getElementById("users-table");
-    if (table) {
-      executeScript(table);
-    }
-    // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
-  }, [executeScript]);
-  // -------------- // STEP 2  -------------------------
-
   return (
     <>
       <main>
@@ -74,10 +55,7 @@ function App() {
               {users.map((user) => (
                 <tr key={user.id}>
                   <th scope="row">{user.id}</th>
-                  {/* -----------  STEP 2  ----------------  */}
-                  {/* biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation> */}
-                  <td dangerouslySetInnerHTML={{ __html: user.firstname }} />
-                  {/* -----------  // STEP 2  ----------------  */}
+                  <td>{user.firstname}</td>
                   <td>{user.lastname}</td>
                   <td>{user.email}</td>
                 </tr>

@@ -48,12 +48,10 @@ class UserRepository {
   async readWithEmailAndPassword(
     user: Omit<User, "id" | "firstname" | "lastname">,
   ) {
-    // Execute the SQL SELECT query to retrieve all items from the "item" table
-    const [rows] = await databaseClient.query<Rows>(
-      `select * from user where email= '${user.email}' and password = '${user.password}`,
+    const [rows] = await databaseClient.execute<Rows>(
+      "SELECT * FROM user WHERE email = ? AND password = ?",
+      [user.email, user.password],
     );
-
-    // Return the array of items
     return rows[0] as User;
   }
 
