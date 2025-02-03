@@ -45,7 +45,7 @@ Maintenant, ton application est prête à être testée ! 🔥
 
 Essaie de te connecter avec l'email d'un utilisateur existant et entre cette valeur dans le champ mot de passe :
 ```sql
-' OR 1=1 --
+' OR 1=1 -- 
 ```
 ➡️ Résultat attendu : Tu seras connecté sans connaître le mot de passe.
 
@@ -67,7 +67,7 @@ Pourquoi ?
 
 Entre cette valeur dans le champ mot de passe lors de la connexion :
 ```sql
-'; DROP DATABASE testdb; --
+'; DROP DATABASE testdb; -- 
 ```
 ➡️ Résultat attendu : La base de données sera supprimée. ⚠️
 
