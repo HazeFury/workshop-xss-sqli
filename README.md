@@ -30,6 +30,9 @@ L'objectif est de tester ces failles sur la branche `main`, comprendre pourquoi 
    ```sh
    npm run db:migrate
    ```
+   ```sh
+   npm run db:seed
+   ```
 5. Lance le serveur :
    ```sh
    npm run dev
