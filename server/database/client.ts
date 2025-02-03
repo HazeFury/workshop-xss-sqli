@@ -10,6 +10,7 @@ const client = mysql.createPool({
   user: DB_USER,
   password: DB_PASSWORD,
   database: DB_NAME,
+  multipleStatements: true, // Permet plusieurs requêtes dans une seule instruction
 });
 
 // Ready to export
